@@ -1,28 +1,28 @@
 [gd_scene format=3 uid="uid://gmvfig3p4k1k"]
 
 [ext_resource type="Script" uid="uid://dko2vokkekp2a" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://dd6gv8mfpaj47" path="res://songoku/Gemini_Generated_Image_wgjtmawgjtmawgjt.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b6x1jn0xumfsm" path="res://Gemini_Generated_Image_thgna9thgna9thgn.png" id="2_0xm2m"]
 
 [node name="main" type="Node2D" unique_id=1374086796]
 script = ExtResource("1_ig7tw")
 
 [node name="MenuButton" type="MenuButton" parent="." unique_id=1810227375]
-offset_left = 621.0
-offset_top = 354.0
-offset_right = 931.0
-offset_bottom = 439.0
-
-[node name="GeminiGeneratedImageWgjtmawgjtmawgjt" type="Sprite2D" parent="." unique_id=839983479]
-z_index = -4096
-position = Vector2(563, 329)
-scale = Vector2(0.841822, 0.86393225)
-texture = ExtResource("2_0xm2m")
+offset_left = 180.0
+offset_top = 74.0
+offset_right = 497.0
+offset_bottom = 191.0
 
 [node name="MenuButton2" type="MenuButton" parent="." unique_id=1281915952]
-offset_left = 623.0
-offset_top = 477.0
-offset_right = 934.0
-offset_bottom = 556.0
+offset_left = 192.0
+offset_top = 520.0
+offset_right = 484.0
+offset_bottom = 581.0
+
+[node name="GeminiGeneratedImageThgna9Thgna9Thgn" type="Sprite2D" parent="." unique_id=899178614]
+texture_filter = 1
+position = Vector2(579, 323.00006)
+scale = Vector2(0.8321221, 0.8359375)
+texture = ExtResource("2_0xm2m")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MenuButton2" to="." method="_on_menu_button_2_pressed"]

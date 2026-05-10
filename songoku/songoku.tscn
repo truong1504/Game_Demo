@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bmmu5roevgkje" path="res://songoku/songoku_nhay.png" id="4_rj1yt"]
 [ext_resource type="Texture2D" uid="uid://b6d7qxtnmbm56" path="res://songoku/songoku (1).png" id="5_1tl8x"]
 [ext_resource type="Texture2D" uid="uid://prghp835esyk" path="res://songoku/songoku.png" id="6_nn7th"]
-[ext_resource type="Texture2D" uid="uid://bg0vlikbyhw3k" path="res://songoku/wnSC6R.png" id="7_o4cjc"]
+[ext_resource type="Texture2D" uid="uid://bu1wjj1sfsi66" path="res://songoku/Gemini_Generated_Image_k8nhqk8nhqk8nhqk.png" id="9_1tl8x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ggh2"]
 radius = 25.0
@@ -78,23 +78,17 @@ position = Vector2(-1.5937476, -6.1249995)
 scale = Vector2(1.4414061, 1.3385417)
 sprite_frames = SubResource("SpriteFrames_7ccec")
 animation = &"hattung"
-frame_progress = 0.71206266
+frame_progress = 0.70317096
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1893274837]
 position = Vector2(-4, 0)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1458844350]
 
-[node name="WnSc6r" type="Sprite2D" parent="." unique_id=1470817125]
+[node name="background" type="Sprite2D" parent="." unique_id=694300610]
 z_index = -4096
-position = Vector2(-285.12497, -0.75001526)
-scale = Vector2(1.8230157, 2.5419998)
-texture = ExtResource("7_o4cjc")
-
-[node name="WnSc6r" type="Sprite2D" parent="WnSc6r" unique_id=385555565]
-z_index = -4096
-position = Vector2(306.82214, 1.8136139)
-scale = Vector2(1.0351472, 1.0066411)
-texture = ExtResource("7_o4cjc")
+position = Vector2(-3.2499762, 1.0000038)
+scale = Vector2(0.8317588, 0.8333334)
+texture = ExtResource("9_1tl8x")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
