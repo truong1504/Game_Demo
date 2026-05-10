@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cx3um2py2b4r" path="res://boss/Gemini_Generated_Image_jz2yu0jz2yu0jz2y (3).png" id="3_ti23b"]
 [ext_resource type="Texture2D" uid="uid://df6g3lc7udujv" path="res://boss/Gemini_Generated_Image_jd7a82jd7a82jd7a (2).png" id="4_naudl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ti23b"]
-radius = 49.497475
+[sub_resource type="CircleShape2D" id="CircleShape2D_205ta"]
+radius = 50.219517
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glpsb"]
 animations = [{
@@ -52,11 +52,13 @@ animations = [{
 }]
 
 [node name="Boss" type="CharacterBody2D" unique_id=2070629075 groups=["boss"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_yy71b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129060352 groups=["boss"]]
 position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_ti23b")
+shape = SubResource("CircleShape2D_205ta")
 
 [node name="Container" type="Node2D" parent="." unique_id=142596548]
 
@@ -65,4 +67,4 @@ position = Vector2(7, 2.0000038)
 scale = Vector2(0.50456804, 0.48392645)
 sprite_frames = SubResource("SpriteFrames_glpsb")
 animation = &"attack"
-frame_progress = 0.970292
+frame_progress = 0.06201975
