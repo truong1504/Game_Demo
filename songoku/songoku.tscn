@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://8mbjp2p1ca17"]
+
+[ext_resource type="Script" uid="uid://fqek4dun3icv" path="res://songoku/songoku.gd" id="1_bgjvq"]
+[ext_resource type="Texture2D" uid="uid://d2rdgjjwrngmm" path="res://songoku/songoku_dung.png" id="1_ssxul"]
+[ext_resource type="Texture2D" uid="uid://dnngctsjveo2q" path="res://songoku/songoku_chay.png" id="2_7ccec"]
+[ext_resource type="PackedScene" uid="uid://dyg4wg6nlbj8k" path="res://kame/kame.tscn" id="2_o4cjc"]
+[ext_resource type="Texture2D" uid="uid://ca1ejsatd8f21" path="res://songoku/songoku_chay2.png" id="3_vvuwf"]
+[ext_resource type="Texture2D" uid="uid://bmmu5roevgkje" path="res://songoku/songoku_nhay.png" id="4_rj1yt"]
+[ext_resource type="Texture2D" uid="uid://b6d7qxtnmbm56" path="res://songoku/songoku (1).png" id="5_1tl8x"]
+[ext_resource type="Texture2D" uid="uid://prghp835esyk" path="res://songoku/songoku.png" id="6_nn7th"]
+[ext_resource type="Texture2D" uid="uid://bg0vlikbyhw3k" path="res://songoku/wnSC6R.png" id="7_o4cjc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ggh2"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ccec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ssxul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vvuwf")
+}],
+"loop": true,
+"name": &"dung",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1tl8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nn7th")
+}],
+"loop": true,
+"name": &"hattung",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vvuwf")
+}, {
+"duration": 2.3,
+"texture": ExtResource("4_rj1yt")
+}],
+"loop": true,
+"name": &"nhay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("4_rj1yt")
+}, {
+"duration": 0.8,
+"texture": ExtResource("1_ssxul")
+}, {
+"duration": 0.8,
+"texture": ExtResource("2_7ccec")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=847504159]
+position = Vector2(1, 1)
+script = ExtResource("1_bgjvq")
+kame_scene = ExtResource("2_o4cjc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1338149321]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_2ggh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1032833986]
+position = Vector2(-1.5937476, -6.1249995)
+scale = Vector2(1.4414061, 1.3385417)
+sprite_frames = SubResource("SpriteFrames_7ccec")
+animation = &"hattung"
+frame_progress = 0.71206266
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1893274837]
+position = Vector2(-4, 0)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1458844350]
+
+[node name="WnSc6r" type="Sprite2D" parent="." unique_id=1470817125]
+z_index = -4096
+position = Vector2(-285.12497, -0.75001526)
+scale = Vector2(1.8230157, 2.5419998)
+texture = ExtResource("7_o4cjc")
+
+[node name="WnSc6r" type="Sprite2D" parent="WnSc6r" unique_id=385555565]
+z_index = -4096
+position = Vector2(306.82214, 1.8136139)
+scale = Vector2(1.0351472, 1.0066411)
+texture = ExtResource("7_o4cjc")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cff0ij1pdc0iw"]
+
+[ext_resource type="Script" uid="uid://cfpnfgkpih2ax" path="res://boss/boss.gd" id="1_yy71b"]
+[ext_resource type="Texture2D" uid="uid://caj0al41a44qc" path="res://boss/Gemini_Generated_Image_jd7a82jd7a82jd7a.png" id="2_205ta"]
+[ext_resource type="Texture2D" uid="uid://gvgmwx7wdn3k" path="res://boss/dire-wolf-mountain (1).png" id="2_270ai"]
+[ext_resource type="Texture2D" uid="uid://7jjgrnjgssdy" path="res://boss/Gemini_Generated_Image_jz2yu0jz2yu0jz2y (2).png" id="2_hcu6l"]
+[ext_resource type="Texture2D" uid="uid://b05fir2xqnj0r" path="res://boss/Gemini_Generated_Image_jd7a82jd7a82jd7a (1).png" id="3_3bina"]
+[ext_resource type="Texture2D" uid="uid://ds2j51cng677f" path="res://boss/dire-wolf-mountain.png" id="3_hcu6l"]
+[ext_resource type="Texture2D" uid="uid://cx3um2py2b4r" path="res://boss/Gemini_Generated_Image_jz2yu0jz2yu0jz2y (3).png" id="3_ti23b"]
+[ext_resource type="Texture2D" uid="uid://df6g3lc7udujv" path="res://boss/Gemini_Generated_Image_jd7a82jd7a82jd7a (2).png" id="4_naudl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ti23b"]
+radius = 49.497475
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glpsb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_205ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3bina")
+}, {
+"duration": 4.0,
+"texture": ExtResource("4_naudl")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hcu6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ti23b")
+}],
+"loop": true,
+"name": &"chay",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_270ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hcu6l")
+}],
+"loop": true,
+"name": &"dung",
+"speed": 5.0
+}]
+
+[node name="Boss" type="CharacterBody2D" unique_id=2070629075 groups=["boss"]]
+script = ExtResource("1_yy71b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129060352 groups=["boss"]]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_ti23b")
+
+[node name="Container" type="Node2D" parent="." unique_id=142596548]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=1913945735 groups=["boss"]]
+position = Vector2(7, 2.0000038)
+scale = Vector2(0.50456804, 0.48392645)
+sprite_frames = SubResource("SpriteFrames_glpsb")
+animation = &"attack"
+frame_progress = 0.970292

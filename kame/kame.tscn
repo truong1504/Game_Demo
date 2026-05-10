@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dyg4wg6nlbj8k"]
+
+[ext_resource type="Texture2D" uid="uid://bm4iay6tckavx" path="res://kame/kameha1.png" id="1_hkner"]
+[ext_resource type="Script" uid="uid://b0dumranoxlbp" path="res://kame/kame.gd" id="1_qkp05"]
+[ext_resource type="Texture2D" uid="uid://c86qg7lxhwka2" path="res://kame/kameha2.png" id="2_qkp05"]
+[ext_resource type="Texture2D" uid="uid://bk7cao0hhql5b" path="res://kame/kameha11.png" id="4_0nfms"]
+[ext_resource type="Texture2D" uid="uid://313nwv5peuj5" path="res://kame/kameha22.png" id="5_sw1nt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcks4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hkner")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qkp05")
+}],
+"loop": true,
+"name": &"flyphai",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0nfms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sw1nt")
+}],
+"loop": true,
+"name": &"flytrai",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nfms"]
+radius = 12.045776
+
+[node name="Kame" type="Area2D" unique_id=1267093203 groups=["boss"]]
+script = ExtResource("1_qkp05")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1181943089 groups=["boss"]]
+position = Vector2(3.0000005, 2.0000007)
+scale = Vector2(2.0833335, 1.90625)
+sprite_frames = SubResource("SpriteFrames_tcks4")
+animation = &"flyphai"
+frame_progress = 0.43617415
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D" unique_id=912610685]
+position = Vector2(8.639998, -1.0491807)
+shape = SubResource("CircleShape2D_0nfms")
+one_way_collision_margin = 2.3
+debug_color = Color(0.09252108, 0.55942273, 0.88060784, 0.41960785)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=845606299]
+position = Vector2(-9, -7)
+rect = Rect2(-10, -10, 38, 36)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
