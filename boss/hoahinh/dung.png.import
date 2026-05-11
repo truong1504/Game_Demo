@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6x1jn0xumfsm"
-path="res://.godot/imported/Gemini_Generated_Image_thgna9thgna9thgn.png-97cf3cc8c0505c3296616c7b8f1bc8e4.ctex"
+uid="uid://sid5bxbld6sd"
+path="res://.godot/imported/dung.png-f01843e4bdde1bd2d05dd5b18f4e71e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gemini_Generated_Image_thgna9thgna9thgn.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_thgna9thgna9thgn.png-97cf3cc8c0505c3296616c7b8f1bc8e4.ctex"]
+source_file="res://boss/hoahinh/dung.png"
+dest_files=["res://.godot/imported/dung.png-f01843e4bdde1bd2d05dd5b18f4e71e2.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gmvfig3p4k1k"]
 
 [ext_resource type="Script" uid="uid://dko2vokkekp2a" path="res://main.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://b6x1jn0xumfsm" path="res://Gemini_Generated_Image_thgna9thgna9thgn.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ct02xqlcer26e" path="res://bgr.png" id="2_0xm2m"]
 
 [node name="main" type="Node2D" unique_id=1374086796]
 script = ExtResource("1_ig7tw")
@@ -22,6 +22,10 @@ offset_bottom = 581.0
 texture_filter = 1
 position = Vector2(579, 323.00006)
 scale = Vector2(0.8321221, 0.8359375)
+
+[node name="Bgr" type="Sprite2D" parent="." unique_id=726272642]
+position = Vector2(579, 323)
+scale = Vector2(0.8357558, 0.8359375)
 texture = ExtResource("2_0xm2m")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

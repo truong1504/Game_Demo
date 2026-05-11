@@ -8,11 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bmmu5roevgkje" path="res://songoku/songoku_nhay.png" id="4_rj1yt"]
 [ext_resource type="Texture2D" uid="uid://b6d7qxtnmbm56" path="res://songoku/songoku (1).png" id="5_1tl8x"]
 [ext_resource type="Texture2D" uid="uid://prghp835esyk" path="res://songoku/songoku.png" id="6_nn7th"]
-[ext_resource type="Texture2D" uid="uid://bu1wjj1sfsi66" path="res://songoku/Gemini_Generated_Image_k8nhqk8nhqk8nhqk.png" id="9_1tl8x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ggh2"]
-radius = 25.0
-height = 50.0
+radius = 19.0
+height = 38.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ccec"]
 animations = [{
@@ -80,15 +79,6 @@ sprite_frames = SubResource("SpriteFrames_7ccec")
 animation = &"hattung"
 frame_progress = 0.70317096
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1893274837]
-position = Vector2(-4, 0)
-
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1458844350]
-
-[node name="background" type="Sprite2D" parent="." unique_id=694300610]
-z_index = -4096
-position = Vector2(-3.2499762, 1.0000038)
-scale = Vector2(0.8317588, 0.8333334)
-texture = ExtResource("9_1tl8x")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

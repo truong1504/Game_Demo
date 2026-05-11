@@ -8,9 +8,20 @@
 [ext_resource type="Texture2D" uid="uid://ds2j51cng677f" path="res://boss/dire-wolf-mountain.png" id="3_hcu6l"]
 [ext_resource type="Texture2D" uid="uid://cx3um2py2b4r" path="res://boss/Gemini_Generated_Image_jz2yu0jz2yu0jz2y (3).png" id="3_ti23b"]
 [ext_resource type="Texture2D" uid="uid://df6g3lc7udujv" path="res://boss/Gemini_Generated_Image_jd7a82jd7a82jd7a (2).png" id="4_naudl"]
+[ext_resource type="Texture2D" uid="uid://dqr6qhc16dmb6" path="res://boss/hoahinh/New Piskel (1).png" id="5_7ga37"]
+[ext_resource type="Texture2D" uid="uid://bv8m1bciifkxa" path="res://boss/hoahinh/New Piskel (2).png" id="6_b7o0r"]
+[ext_resource type="Texture2D" uid="uid://d4atxony7dxhd" path="res://boss/hoahinh/New Piskel (3).png" id="7_gptwq"]
+[ext_resource type="Texture2D" uid="uid://q5r7u4x6yma8" path="res://boss/dire-wolf-mountain (1)die.png" id="7_naudl"]
+[ext_resource type="Texture2D" uid="uid://bpsbk3tqbi11h" path="res://boss/dire-wolf-mountain_die.png" id="8_6w25r"]
+[ext_resource type="Texture2D" uid="uid://nxy8xt8vcx0p" path="res://boss/hoahinh/chay2.png" id="10_bkmdk"]
+[ext_resource type="Texture2D" uid="uid://cq6x05kekdc1j" path="res://boss/hoahinh/chay.png" id="11_q1lp7"]
+[ext_resource type="Texture2D" uid="uid://3f6fi5fq1tgf" path="res://boss/hoahinh/dung2.png" id="16_mlnln"]
+[ext_resource type="Texture2D" uid="uid://sid5bxbld6sd" path="res://boss/hoahinh/dung.png" id="17_cdwu8"]
+[ext_resource type="Texture2D" uid="uid://xgll73tpenaf" path="res://boss/hoahinh/dung2 (1).png" id="18_da7hl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_205ta"]
-radius = 50.219517
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_205ta"]
+radius = 49.0
+height = 118.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_glpsb"]
 animations = [{
@@ -30,6 +41,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_b7o0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ga37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gptwq")
+}],
+"loop": true,
+"name": &"attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_hcu6l")
 }, {
 "duration": 1.0,
@@ -41,6 +66,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_bkmdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q1lp7")
+}],
+"loop": true,
+"name": &"chay2",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_naudl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6w25r")
+}],
+"loop": true,
+"name": &"die",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_270ai")
 }, {
 "duration": 1.0,
@@ -49,22 +96,43 @@ animations = [{
 "loop": true,
 "name": &"dung",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_cdwu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_q1lp7")
+}],
+"loop": true,
+"name": &"dung2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_da7hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mlnln")
+}],
+"loop": true,
+"name": &"hoahinh",
+"speed": 5.0
 }]
 
 [node name="Boss" type="CharacterBody2D" unique_id=2070629075 groups=["boss"]]
-collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_yy71b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129060352 groups=["boss"]]
 position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_205ta")
+shape = SubResource("CapsuleShape2D_205ta")
 
 [node name="Container" type="Node2D" parent="." unique_id=142596548]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Container" unique_id=1913945735 groups=["boss"]]
-position = Vector2(7, 2.0000038)
-scale = Vector2(0.50456804, 0.48392645)
+position = Vector2(20, 2)
+scale = Vector2(0.67628986, 0.5684011)
 sprite_frames = SubResource("SpriteFrames_glpsb")
-animation = &"attack"
-frame_progress = 0.06201975
+animation = &"attack2"
+frame_progress = 0.521767

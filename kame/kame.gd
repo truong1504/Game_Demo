@@ -1,76 +1,73 @@
 extends Area2D
 
-var speed = 700
+var speed = 500
 var direction = 1
 var damage = 20
 
 @onready var anim = $AnimatedSprite2D
 
-var has_hit = false
 
 func _ready():
-	add_to_group("kame")
 
-	body_entered.connect(_on_body_entered)
-
-	monitoring = true
-	monitorable = true
-
+	# animation đúng hướng
 	if direction < 0:
 		anim.play("flytrai")
 	else:
 		anim.play("flyphai")
 
+	add_to_group("player_attack")
 
 
+# =========================
+# PHYSICS PROCESS
+# =========================
 func _physics_process(delta):
 
+	# vị trí hiện tại
 	var from = global_position
-	var to = global_position + Vector2(speed * direction * delta, 0)
+
+	# vị trí tiếp theo
+	var to = from + Vector2(speed * direction * delta, 0)
 
 	# =========================
-	# RAYCAST CHECK (CHỐNG XUYÊN 100%)
+	# RAYCAST CHỐNG XUYÊN
 	# =========================
 	var space_state = get_world_2d().direct_space_state
+
 	var query = PhysicsRayQueryParameters2D.create(from, to)
-	query.exclude = [self]
+
+	query.collide_with_areas = true
+	query.collide_with_bodies = true
 
 	var result = space_state.intersect_ray(query)
 
+	# =========================
+	# HIT
+	# =========================
 	if result:
-		var collider = result.collider
 
-		if collider.is_in_group("boss"):
-			_hit_boss(collider)
+		var body = result.collider
+
+		if body.is_in_group("boss") or body.is_in_group("enemy"):
+
+			if body.has_method("take_damage"):
+				body.take_damage(damage)
+
+			queue_free()
 			return
 
-	# nếu không trúng gì → di chuyển bình thường
+		# trúng tường
+		queue_free()
+		return
+
+	# =========================
+	# MOVE
+	# =========================
 	global_position = to
 
 
 # =========================
-# FALLBACK (Area2D detect)
+# OUT SCREEN
 # =========================
-func _on_body_entered(body):
-
-	if has_hit:
-		return
-
-	if body.is_in_group("boss"):
-		_hit_boss(body)
-
-
-# =========================
-# HIT LOGIC
-# =========================
-func _hit_boss(body):
-
-	if has_hit:
-		return
-
-	has_hit = true
-
-	if body.has_method("take_damage"):
-		body.take_damage(damage)
-
+func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
