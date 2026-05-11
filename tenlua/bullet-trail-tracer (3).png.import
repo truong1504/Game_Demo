@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bck62idqiyi2j"
-path="res://.godot/imported/dung2 (2).png-9fdbd9dfe43e547d2cabffb5c4af33af.ctex"
+uid="uid://dec046j77bwkw"
+path="res://.godot/imported/bullet-trail-tracer (3).png-ac2cbb58681c733b457086e52f187c9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dung2 (2).png"
-dest_files=["res://.godot/imported/dung2 (2).png-9fdbd9dfe43e547d2cabffb5c4af33af.ctex"]
+source_file="res://tenlua/bullet-trail-tracer (3).png"
+dest_files=["res://.godot/imported/bullet-trail-tracer (3).png-ac2cbb58681c733b457086e52f187c9f.ctex"]
 
 [params]
 

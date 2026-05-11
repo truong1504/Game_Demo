@@ -1,4 +1,4 @@
 [gd_scene format=3 uid="uid://dry2rp5hc64h0"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1198379070]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1198379070 groups=["player"]]
 position = Vector2(281, 372)

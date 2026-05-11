@@ -16,8 +16,8 @@ var facing = 1
 # =========================
 # HP
 # =========================
-var max_hp = 160
-var hp = 160
+var max_hp = 200
+var hp = 200
 
 # =========================
 # STATE
@@ -40,7 +40,7 @@ func _ready():
 
 	create_hp_bar()
 
-	print("Songoku ready HP:", hp)
+	print("Janitor ready HP:", hp)
 
 
 # =========================
@@ -105,7 +105,7 @@ func take_damage(damage_amount):
 
 	update_hp_bar()
 
-	print("Player nhận sát thương:", damage_amount)
+	print("Janitor nhận sát thương:", damage_amount)
 	print("HP còn:", hp)
 
 	knock_up()
@@ -127,7 +127,9 @@ func die():
 
 	velocity = Vector2.ZERO
 
-	print("Player chết")
+	print("Janitor chết")
+
+	anm.play("die")
 
 	await get_tree().create_timer(1.0).timeout
 
@@ -154,6 +156,15 @@ func shoot():
 	if is_dead:
 		return
 
+	# chống null
+	if kame_scene == null:
+		print("Thiếu kame_scene")
+		return
+
+	if not has_node("Marker2D"):
+		print("Thiếu Marker2D")
+		return
+
 	var kame = kame_scene.instantiate()
 
 	kame.direction = facing
@@ -162,15 +173,7 @@ func shoot():
 
 	kame.position = $Marker2D.global_position
 
-	print("Bắn đạn:", facing)
-
-
-# =========================
-# RELOAD SCENE
-# =========================
-func _reload_scene():
-
-	get_tree().reload_current_scene()
+	print("Janitor bắn:", facing)
 
 
 # =========================
@@ -257,7 +260,7 @@ func _physics_process(delta):
 	else:
 
 		anm.play("dung")
-		
+
 	if global_position.y > 2000:
 
 		die()

@@ -26,7 +26,8 @@ var is_transforming = false
 # NODE
 # =========================
 @onready var anm = $Container/AnimatedSprite2D
-@onready var player = get_node("../songoku")
+
+var player
 
 # HP BAR
 var hp_bar_bg
@@ -37,6 +38,10 @@ func _ready():
 
 	add_to_group("boss")
 
+	await get_tree().process_frame
+
+	player = get_tree().get_first_node_in_group("player")
+
 	anm.play("dung")
 
 	create_hp_bar()
@@ -45,6 +50,16 @@ func _ready():
 
 
 func _physics_process(delta):
+
+	# =========================
+	# PLAYER NULL FIX
+	# =========================
+	if player == null:
+
+		player = get_tree().get_first_node_in_group("player")
+
+		if player == null:
+			return
 
 	# =========================
 	# DEAD
@@ -177,6 +192,9 @@ func attack():
 # DAMAGE
 # =========================
 func _do_damage():
+
+	if player == null:
+		return
 
 	var dist = abs(player.global_position.x - global_position.x)
 

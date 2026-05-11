@@ -14,6 +14,14 @@ config/name="Doi_Khang"
 run/main_scene="uid://gmvfig3p4k1k"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+Global="*uid://hl1g6arff8xp"
+
+[global_group]
+
+player=""
+
 [input]
 
 ui_accept={

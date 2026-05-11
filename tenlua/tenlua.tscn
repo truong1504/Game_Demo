@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cit0fyuqi75vw"]
+
+[ext_resource type="Script" uid="uid://lbdenreav0mm" path="res://tenlua/tenlua.gd" id="1_ig2tq"]
+[ext_resource type="Texture2D" uid="uid://baw6s3txex4e8" path="res://tenlua/bullet-trail-tracer (1).png" id="2_kuew8"]
+[ext_resource type="Texture2D" uid="uid://c6c4plol8lgk5" path="res://tenlua/bullet-trail-tracer.png" id="3_6t407"]
+[ext_resource type="Texture2D" uid="uid://c16kn6ivls0k8" path="res://tenlua/bullet-trail-tracer (2).png" id="4_kn5op"]
+[ext_resource type="Texture2D" uid="uid://dec046j77bwkw" path="res://tenlua/bullet-trail-tracer (3).png" id="5_xst3g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxgtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kuew8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6t407")
+}],
+"loop": true,
+"name": &"tebluaphai",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kn5op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xst3g")
+}],
+"loop": true,
+"name": &"tenluatrai",
+"speed": 11.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig2tq"]
+size = Vector2(66, 23)
+
+[node name="Tenlua" type="Area2D" unique_id=1517232184]
+script = ExtResource("1_ig2tq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1851712066]
+position = Vector2(-4.999998, 2)
+scale = Vector2(1.6328125, 1.453125)
+sprite_frames = SubResource("SpriteFrames_rxgtr")
+animation = &"tebluaphai"
+frame_progress = 0.5633464
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1862305794]
+position = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_ig2tq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=406808351]
