@@ -4,8 +4,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -470.0
 
 # lực hất tung
-const KNOCKBACK_Y = -350.0
-const KNOCKBACK_X = 100.0
+const KNOCKBACK_Y = -50.0
+const KNOCKBACK_X = 50.0
 
 @onready var anm = $AnimatedSprite2D
 

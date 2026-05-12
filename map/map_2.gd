@@ -35,14 +35,14 @@ func _reload_scene():
 	get_tree().reload_current_scene()
 
 
-var pause_scene = preload("res://map/tam_dung.tscn")
+func _process(delta):
 
-func _on_pause_pressed():
-	var menu = pause_scene.instantiate()
+	# F1 restart
+	if Input.is_physical_key_pressed(KEY_F1):
 
-	add_child(menu)
+		call_deferred("_reload_scene")
 
-	menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	# F2 menu
+	if Input.is_physical_key_pressed(KEY_F2):
 
-	get_tree().paused = true
-	
+		get_tree().change_scene_to_file("res://main.tscn")

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c8qqoj8ky3dg1"]
+
+[ext_resource type="Script" uid="uid://cviic63pua3xe" path="res://select_map.gd" id="1_asrfc"]
+[ext_resource type="Texture2D" uid="uid://bbr8a8c2w1hum" path="res://pictures/map/select.png" id="2_asrfc"]
+[ext_resource type="Texture2D" uid="uid://c2hk5tudewkj2" path="res://pictures/map/map2.png" id="3_cdbb8"]
+[ext_resource type="Texture2D" uid="uid://c8gipymj4ox34" path="res://pictures/map/map3.png" id="4_2rhc3"]
+[ext_resource type="Texture2D" uid="uid://dk1fx5io4obyf" path="res://pictures/map/map4.png" id="5_mnmpo"]
+[ext_resource type="Texture2D" uid="uid://tpsrjjb3sfoj" path="res://pictures/map/ChatGPT Image 21_10_19 12 thg 5, 2026.png" id="6_cdbb8"]
+[ext_resource type="Texture2D" uid="uid://dkgbw2dgk0m41" path="res://pictures/map/Screenshot 2026-05-12 211633.png" id="7_2rhc3"]
+
+[node name="SelectMap" type="Node2D" unique_id=2110850848]
+script = ExtResource("1_asrfc")
+
+[node name="Select" type="Sprite2D" parent="." unique_id=1297613011]
+position = Vector2(217.99997, 153.00002)
+scale = Vector2(0.19299205, 0.19401053)
+texture = ExtResource("2_asrfc")
+
+[node name="Map2" type="Sprite2D" parent="." unique_id=1775638371]
+position = Vector2(563, 153.25003)
+scale = Vector2(0.19571532, 0.1946614)
+texture = ExtResource("3_cdbb8")
+
+[node name="Map3" type="Sprite2D" parent="." unique_id=2098063397]
+position = Vector2(925, 156)
+scale = Vector2(0.21750182, 0.19401042)
+texture = ExtResource("4_2rhc3")
+
+[node name="Map4" type="Sprite2D" parent="." unique_id=1872295120]
+position = Vector2(218, 348)
+scale = Vector2(0.18936093, 0.18359372)
+texture = ExtResource("5_mnmpo")
+
+[node name="map1" type="MenuButton" parent="." unique_id=1817987257]
+offset_left = 87.0
+offset_top = 74.0
+offset_right = 348.0
+offset_bottom = 227.0
+
+[node name="map2" type="MenuButton" parent="." unique_id=1053611848]
+offset_left = 434.0
+offset_top = 74.0
+offset_right = 695.0
+offset_bottom = 227.0
+
+[node name="map3" type="MenuButton" parent="." unique_id=75717277]
+offset_left = 798.0
+offset_top = 78.0
+offset_right = 1059.0
+offset_bottom = 231.0
+
+[node name="map4" type="MenuButton" parent="." unique_id=1022309877]
+offset_left = 91.0
+offset_top = 267.0
+offset_right = 352.0
+offset_bottom = 420.0
+
+[node name="ChatGptImage21101912Thg5,2026" type="Sprite2D" parent="." unique_id=139118973]
+z_index = -4096
+position = Vector2(573, 324.25)
+scale = Vector2(0.7284689, 0.7550478)
+texture = ExtResource("6_cdbb8")
+
+[node name="back" type="MenuButton" parent="." unique_id=87928374]
+offset_left = 32.0
+offset_top = 526.0
+offset_right = 187.0
+offset_bottom = 643.0
+icon = ExtResource("7_2rhc3")
+
+[connection signal="pressed" from="map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="map2" to="." method="_on_map_2_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

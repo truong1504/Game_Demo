@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d1yf0wuvvxuav"]
+
+[ext_resource type="Script" uid="uid://duyti1d8isgj4" path="res://map/tam_dung.gd" id="1_a4lug"]
+[ext_resource type="Texture2D" uid="uid://d36dmwrt3nk05" path="res://pictures/map/select_map.png" id="2_sjxrx"]
+[ext_resource type="Texture2D" uid="uid://d2hg47tf8161i" path="res://pictures/map/Screenshot 2026-05-12 214608.png" id="3_2qu3b"]
+[ext_resource type="Texture2D" uid="uid://dkgbw2dgk0m41" path="res://pictures/map/Screenshot 2026-05-12 211633.png" id="4_usmct"]
+[ext_resource type="Texture2D" uid="uid://vpvw2r6e5g8k" path="res://pictures/map/Screenshot 2026-05-12 214527.png" id="5_osbb5"]
+
+[node name="TamDung" type="Node2D" unique_id=887783159]
+script = ExtResource("1_a4lug")
+
+[node name="SelectMap" type="Sprite2D" parent="." unique_id=896880957]
+position = Vector2(590, 325)
+scale = Vector2(0.29336125, 0.21068011)
+texture = ExtResource("2_sjxrx")
+
+[node name="choi_lai" type="MenuButton" parent="SelectMap" unique_id=1881351265]
+offset_left = 320.5966
+offset_top = -175.80704
+offset_right = 577.9419
+offset_bottom = 110.25592
+
+[node name="Screenshot20260512214608" type="Sprite2D" parent="SelectMap/choi_lai" unique_id=2126881674]
+position = Vector2(134.69507, 150.5888)
+scale = Vector2(3.5672433, 5.220822)
+texture = ExtResource("3_2qu3b")
+
+[node name="back" type="MenuButton" parent="SelectMap" unique_id=1810997778]
+offset_left = -549.9121
+offset_top = -190.21745
+offset_right = -229.31567
+offset_bottom = 102.4597
+
+[node name="Screenshot20260512211633" type="Sprite2D" parent="SelectMap/back" unique_id=186614571]
+position = Vector2(173.6565, 164.27869)
+scale = Vector2(2.2263644, 2.8820827)
+texture = ExtResource("4_usmct")
+
+[node name="tiep_tuc" type="MenuButton" parent="SelectMap" unique_id=1439832492]
+offset_left = -126.9028
+offset_top = -164.27873
+offset_right = 173.6564
+offset_bottom = 131.70552
+
+[node name="Screenshot20260512214527" type="Sprite2D" parent="SelectMap/tiep_tuc" unique_id=1339120833]
+position = Vector2(160.85486, 138.70026)
+scale = Vector2(4.174433, 5.20901)
+texture = ExtResource("5_osbb5")
+
+[connection signal="pressed" from="SelectMap/choi_lai" to="." method="_on_choi_lai_pressed"]
+[connection signal="pressed" from="SelectMap/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="SelectMap/tiep_tuc" to="." method="_on_tiep_tuc_pressed"]

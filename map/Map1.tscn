@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dp4p4rmmp3ax3"]
 
-[ext_resource type="Texture2D" uid="uid://bu1wjj1sfsi66" path="res://songoku/Gemini_Generated_Image_k8nhqk8nhqk8nhqk.png" id="1_d0y10"]
 [ext_resource type="Script" uid="uid://gjm43svuaaoh" path="res://map/map_1.gd" id="1_l2dqw"]
 [ext_resource type="Texture2D" uid="uid://bv3gf4pxli883" path="res://songoku/blood-pool-tile.png" id="2_gfqvo"]
+[ext_resource type="Texture2D" uid="uid://bbr8a8c2w1hum" path="res://pictures/map/select.png" id="4_l2dqw"]
 [ext_resource type="PackedScene" uid="uid://cff0ij1pdc0iw" path="res://boss/boss.tscn" id="4_qju7g"]
+[ext_resource type="Texture2D" uid="uid://bmksjuk4bniht" path="res://pictures/map/Screenshot 2026-05-12 214234.png" id="5_qju7g"]
+[ext_resource type="PackedScene" uid="uid://d1yf0wuvvxuav" path="res://map/tam_dung.tscn" id="6_4x4fv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l2dqw"]
 texture = ExtResource("2_gfqvo")
@@ -223,12 +225,6 @@ sources/1 = SubResource("TileSetAtlasSource_l2dqw")
 [node name="Map1" type="Node2D" unique_id=638382693]
 script = ExtResource("1_l2dqw")
 
-[node name="GeminiGeneratedImageK8Nhqk8Nhqk8Nhqk" type="Sprite2D" parent="." unique_id=135052296]
-z_index = -4096
-position = Vector2(578, 330)
-scale = Vector2(0.8339389, 0.84635425)
-texture = ExtResource("1_d0y10")
-
 [node name="TileMap" type="TileMap" parent="." unique_id=2047152823]
 tile_set = SubResource("TileSet_qju7g")
 format = 2
@@ -248,14 +244,28 @@ editable = false
 [node name="SpawnPoint" type="Node2D" parent="." unique_id=452386376]
 position = Vector2(240, 154)
 
-[node name="TextEdit2" type="TextEdit" parent="." unique_id=1293358925]
-offset_left = 10.0
-offset_top = 9.0
-offset_right = 173.0
-offset_bottom = 105.0
-text = "F1 chơi lại
-F2 menu chính"
-editable = false
-
 [node name="Boss" parent="." unique_id=2070629075 instance=ExtResource("4_qju7g")]
 position = Vector2(841, 156)
+
+[node name="Select" type="Sprite2D" parent="." unique_id=1449084425]
+z_index = -4096
+position = Vector2(620.25, 322)
+scale = Vector2(0.8986928, 0.8541667)
+texture = ExtResource("4_l2dqw")
+
+[node name="Screenshot20260512214234" type="Sprite2D" parent="." unique_id=908201903]
+position = Vector2(41, 44)
+texture = ExtResource("5_qju7g")
+
+[node name="pause" type="MenuButton" parent="." unique_id=1929867967]
+offset_left = 2.0
+offset_top = 7.0
+offset_right = 83.0
+offset_bottom = 82.0
+
+[node name="TamDung" parent="pause" unique_id=887783159 instance=ExtResource("6_4x4fv")]
+visible = false
+z_index = -4096
+position = Vector2(26, -18)
+
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]

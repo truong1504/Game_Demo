@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dtnbcsb0mh7m" path="res://chon_nv.gd" id="1_knjgi"]
 [ext_resource type="Texture2D" uid="uid://cmqfooa22hqfq" path="res://janitor/chay.png" id="2_fjkj8"]
 [ext_resource type="Texture2D" uid="uid://blqsotxnxr8li" path="res://janitor/chay2.png" id="3_0h4te"]
-[ext_resource type="Texture2D" uid="uid://bu1wjj1sfsi66" path="res://songoku/Gemini_Generated_Image_k8nhqk8nhqk8nhqk.png" id="4_pcgf6"]
 [ext_resource type="Texture2D" uid="uid://ca1ejsatd8f21" path="res://songoku/songoku_chay2.png" id="5_7hydu"]
 [ext_resource type="Texture2D" uid="uid://dnngctsjveo2q" path="res://songoku/songoku_chay.png" id="6_a6406"]
+[ext_resource type="Texture2D" uid="uid://bbr8a8c2w1hum" path="res://pictures/map/select.png" id="6_knjgi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pw3ie"]
 animations = [{
@@ -45,46 +45,45 @@ offset_right = 227.0
 offset_bottom = 210.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=308641278]
-position = Vector2(187.5, 155)
-scale = Vector2(3.42, 3.3600004)
+position = Vector2(174, 133.5)
+scale = Vector2(2.8800004, 2.5000002)
 sprite_frames = SubResource("SpriteFrames_pw3ie")
 animation = &"janitor"
 
-[node name="GeminiGeneratedImageK8Nhqk8Nhqk8Nhqk" type="Sprite2D" parent="." unique_id=1821348086]
-z_index = -900
-texture_filter = 1
-position = Vector2(810, 100)
-scale = Vector2(1.1744186, 1.4375)
-texture = ExtResource("4_pcgf6")
-
 [node name="TextEdit" type="TextEdit" parent="." unique_id=864487722]
 anchors_preset = -1
-offset_left = 157.0
-offset_top = 231.0
-offset_right = 219.0
-offset_bottom = 267.0
+offset_left = 147.0
+offset_top = 194.0
+offset_right = 210.0
+offset_bottom = 232.0
 text = "janitor"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=743371617]
-position = Vector2(452, 141)
-scale = Vector2(2.5416663, 3.125)
+position = Vector2(402.99997, 105.5)
+scale = Vector2(2.4583335, 3.1875)
 sprite_frames = SubResource("SpriteFrames_56jvo")
 animation = &"son"
 frame_progress = 0.9495395
 
 [node name="MenuButton2" type="MenuButton" parent="." unique_id=1346254606]
-offset_left = 413.0
-offset_top = 91.0
-offset_right = 486.0
-offset_bottom = 228.0
+offset_left = 353.0
+offset_top = 71.0
+offset_right = 446.0
+offset_bottom = 193.0
 
 [node name="TextEdit2" type="TextEdit" parent="." unique_id=804814470]
 anchors_preset = -1
-offset_left = 419.0
-offset_top = 234.0
-offset_right = 496.0
-offset_bottom = 270.0
+offset_left = 371.0
+offset_top = 193.0
+offset_right = 453.0
+offset_bottom = 231.0
 text = "songoku"
+
+[node name="Select" type="Sprite2D" parent="." unique_id=2137256127]
+z_index = -4096
+position = Vector2(616.75, 325)
+scale = Vector2(0.88634706, 0.8489583)
+texture = ExtResource("6_knjgi")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MenuButton2" to="." method="_on_menu_button_2_pressed"]
